@@ -14,9 +14,9 @@ print 'Socket Created'
  
 #host = 'www.google.com';
 #port = 80;
-host = '172.20.24.244'
+#host = '172.20.24.244'
 host = socket.gethostname()
-port = 8080
+port = 1234
  
 try:
     remote_ip = socket.gethostbyname( host )
@@ -52,8 +52,6 @@ print 'Got connection from', addr
  
 #Now receive data
 while True:
-  msg = c.recv(1024)
-  print addr, ' >> ', msg
-  msg = raw_input('SERVER >> ')
-  c.send(msg);
-  #c.close()   
+    msg = c.recv(1024)
+    print addr, ' >> ', msg
+#c.close()   
