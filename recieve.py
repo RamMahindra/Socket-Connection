@@ -2,6 +2,7 @@
  
 import socket   #for sockets
 import sys  #for exit
+import pyautogui
  
 #create an INET, STREAMing socket
 try:
@@ -53,5 +54,15 @@ print 'Got connection from', addr
 #Now receive data
 while True:
     msg = c.recv(1024)
-    print addr, ' >> ', msg
+    z1 = msg.split('.')
+    if (z1[0] == "move"):
+        pyautogui.moveRel(int(z1[1]),int(z1[2]))
+    elif (z1[0] == "left"):
+        pyautogui.click()
+    elif (z1[0] == "w"):
+        pyautogui.typewrite(['w'])
+    elif (z1[0] == "b"):
+        pyautogui.typewrite(['b'])
+    elif (z1[0] == "a"):
+        pyautogui.typewrite(['a'])
 #c.close()   

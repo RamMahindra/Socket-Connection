@@ -30,9 +30,9 @@ except socket.error, msg:
  
 print 'Socket Created'
  
-#host = '172.20.24.244' #this system
-host = socket.gethostname()
-port = 1234
+host = '172.20.24.143' #this system
+#host = socket.gethostname()
+port = 8080
  
 try:
     remote_ip = socket.gethostbyname( host )
@@ -88,7 +88,7 @@ while running:
              else:
                 even = "other"
         (posX,posY) = pyautogui.position()
-        m = even+" "+str(posX)+" "+str(posY)
+        m = even+"."+str(posX)+"."+str(posY)
         s.send(m)
     clock.tick(240)
 ##    msg = raw_input('CLIENT >> ')
